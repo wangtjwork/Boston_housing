@@ -2284,7 +2284,7 @@ FQs+Y4wxYcWCzxhjTFix4DPGGBNW/j8klEzI5uKFtAAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-When the model is trained with a maximum depth of 1, the model suffers from high bias, because it is too simple. From the graph we can see that its score is far from 1, which justifies my conclusion.</p>
+When the model is trained with a maximum depth of 1, the model suffers from high bias, because it is too simple. From the graph we can see that its training score is far from 1, which justifies my conclusion. I believe what high bias means is that it could not even give a satifactory result on the training data.</p>
 <p>When the model is trained with a maximum depth of 10, the model suffers from high variance, because it is too complicated. From the graph we can see that the score difference between training and validation increases when the model complexity increases, which justifies my conclusion.</p>
 
 </div>
@@ -2361,7 +2361,7 @@ In my understanding, the grid search technique is an exhaustive search performed
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-k-fold cross-validation training technique is a technique used during model selection. It is splitting the dataset into k folds, use one for testing and others for training. So after k times of training and testing, we get a mean of the error for oen specific model. So if we use grid search without cross-validated set, it could be heavily optimistic because it could be just pure chance that the one specific model does well.</p>
+k-fold cross-validation training technique is a technique used during model selection. It is splitting the dataset into k folds, use one for testing and others for training. So after k times of training and testing, we get a mean of the error for oen specific model. So if we use grid search without cross-validated set, it could be heavily optimistic because it could be just pure chance that the one specific model does well. Like in this example, if we accidentally put all people with a high 'RM' into the testing set, then the results would not be satisfactory becasue the training data lacks a specific feature, and no matter how well it performs on the training set, it could not perform well on the testing set. By using cross-validation, we prevents such a random circumstance like this from happening by taking multiple training and testing set spilts.</p>
 
 </div>
 </div>
