@@ -452,12 +452,16 @@ For 'PTRATIO', when it increases, it would mean that teachers are not enough for
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="n">score</span> <span class="o">=</span> <span class="n">performance_metric</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">])</span>
 <span class="k">print</span> <span class="s2">&quot;Model has a coefficient of determination, R^2, of {:.3f}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="n">sample_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mf">4.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span><span class="mf">7.8</span><span class="p">,</span><span class="mf">5.3</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">sample_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sample_df</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">sample_df</span><span class="o">.</span><span class="n">B</span><span class="p">,</span><span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -473,6 +477,96 @@ For 'PTRATIO', when it increases, it would mean that teachers are not enough for
 <pre>Model has a coefficient of determination, R^2, of 0.923.
 </pre>
 </div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.collections.PathCollection at 0x103ede550&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
 </div>
 
 </div>
@@ -560,7 +654,7 @@ I would think this model have successfully captured the variation of the target 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> 
- The dataset has to be split into ome ration of training and testing subsets so as to avoid overfitting. If there's not a way to test the model separately from the training data, the model may take everything into account and be overfitting in the real life.</p>
+ The dataset has to be split into some ratio of training and testing subsets so as to know of overfitting. If there's not a way to test the model separately from the training data, the model may take everything into account and become overfit in the real life. So we need something the model wasn't trained on to estimate its "actual" behavior, and maybe stop training when it overfits woo much. Also, since our main purpose of building a model is to predict labels based on features, testing data gives us the idea of how we are roughly doing.</p>
 
 </div>
 </div>
@@ -1683,7 +1777,7 @@ Bx5smZmZmZmZ1cH/A67bY+uAW9jYAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-For the left-down graph, where maximum depth is 6, as more training points are added, the score of the training curve and the score of the testing curve tend to lead to a constant. So I don't think having more training points would benefit the model above 300. Also is the left-down graph having more bias than the right-top model where maximum depth is 3? And how can I see the variance in this graph?</p>
+For the left-down graph, where maximum depth is 6, as more training points are added, the score of the training curve tends to lead to a constant of about 0.92, starting from 1. In the meantime the score of the testing curve, starting from 0, would tend to grow rapidly fast in the first 50 points trained, more slowly between 50 to 150, and have only minor changes after 150. So I don't think having more training points would benefit the model above 250.</p>
 
 </div>
 </div>
@@ -2244,7 +2338,7 @@ When the model is trained with a maximum depth of 1, the model suffers from high
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-In my understanding, the grid search technique is an exhaustive search performed by the sklearn package on how the parameters should be like, which takes in some 'guesses' and output the one getting most points.</p>
+In my understanding, the grid search technique is an exhaustive search performed by the sklearn package on how the parameters should be like, which takes in some 'guesses' and output the one getting most points. In detail, we pass into grid search a specific kind of estimator, a set of parameters that could affect the performance of the estimator and maybe some kind of evaluation on how well we are doing. There are also some other things we could specify, including the amount of k in k-fold cross vaildation, or number of jobs to run in parallel.</p>
 <p>So by using grid search we can get a good start on parameters of a learning algorithm.</p>
 
 </div>
@@ -2267,7 +2361,7 @@ In my understanding, the grid search technique is an exhaustive search performed
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-k-fold cross-validation training technique is splitting the dataset into k folds, use one for testing and others for training. This prevents obtaining wierd results using grid search due to some wierd data structure in the training data.</p>
+k-fold cross-validation training technique is a technique used during model selection. It is splitting the dataset into k folds, use one for testing and others for training. So after k times of training and testing, we get a mean of the error for oen specific model. So if we use grid search without cross-validated set, it could be heavily optimistic because it could be just pure chance that the one specific model does well.</p>
 
 </div>
 </div>
